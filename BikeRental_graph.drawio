@@ -472,38 +472,38 @@
     </mxGraphModel>
   </diagram>
   <diagram id="p3" name="Как добраться между станциями">
-    <mxGraphModel dx="1032" dy="680" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="560" math="0" shadow="0">
+    <mxGraphModel dx="860" dy="567" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="560" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;                  verticalAlign=middle;fontSize=20;fontStyle=1;" value="Как добраться между станциями?" vertex="1">
           <mxGeometry height="36" width="400" x="300" y="10" as="geometry" />
         </mxCell>
-        <mxCell id="12" edge="1" parent="1" source="3" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;" target="4" value="2.5 км / 10 мин">
+        <mxCell id="12" edge="1" parent="1" source="3" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;startArrow=classic;startFill=1;" target="4" value="2.5 км / 10 мин">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="13" edge="1" parent="1" source="4" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;" target="5" value="3.0 км / 15 мин">
+        <mxCell id="13" edge="1" parent="1" source="4" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;startArrow=classic;startFill=1;" target="5" value="3.0 км / 15 мин">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="14" edge="1" parent="1" source="5" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;" target="6" value="1.5 км / 7 мин">
+        <mxCell id="14" edge="1" parent="1" source="5" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;startArrow=classic;startFill=1;" target="6" value="1.5 км / 7 мин">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="15" edge="1" parent="1" source="6" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;" target="7" value="4.0 км / 20 мин">
+        <mxCell id="15" edge="1" parent="1" source="6" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;startArrow=classic;startFill=1;" target="7" value="4.0 км / 20 мин">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="16" edge="1" parent="1" source="3" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;" target="8" value="3.5 км / 15 мин">
+        <mxCell id="16" edge="1" parent="1" source="3" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;startArrow=classic;startFill=1;" target="8" value="3.5 км / 15 мин">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="17" edge="1" parent="1" source="8" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;strokeColor=#E68000;" target="7" value="2.0 км / 10 мин">
+        <mxCell id="17" edge="1" parent="1" source="8" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;strokeColor=#E68000;startArrow=classic;startFill=1;" target="7" value="2.0 км / 10 мин">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="18" edge="1" parent="1" source="4" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;" target="9" value="5.0 км / 25 мин">
+        <mxCell id="18" edge="1" parent="1" source="4" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;startArrow=classic;startFill=1;" target="9" value="5.0 км / 25 мин">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="19" edge="1" parent="1" source="9" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;" target="10" value="1.0 км / 5 мин">
+        <mxCell id="19" edge="1" parent="1" source="9" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;startArrow=classic;startFill=1;" target="10" value="1.0 км / 5 мин">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="20" edge="1" parent="1" source="10" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;" target="11" value="2.5 км / 12 мин">
+        <mxCell id="20" edge="1" parent="1" source="10" style="edgeStyle=none;html=1;fontSize=10;labelBackgroundColor=#ffffff;                  endArrow=block;endFill=1;strokeWidth=2;startArrow=classic;startFill=1;" target="11" value="2.5 км / 12 мин">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="OrQYImOEZgFq-gMt4Nqy-20" connectable="0" parent="1" style="group" value="" vertex="1">

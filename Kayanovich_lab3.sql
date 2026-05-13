@@ -118,26 +118,51 @@ SELECT b.$node_id, s.$node_id, '2023-10-09', 'Locked' FROM Bikes b, Stations s W
 INSERT INTO ParkedAt ($from_id, $to_id, ParkDate, Status)
 SELECT b.$node_id, s.$node_id, '2023-10-10', 'Broken' FROM Bikes b, Stations s WHERE b.BikeID = 10 AND s.StationID = 1;
 
+
 INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
 SELECT s1.$node_id, s2.$node_id, 2.5, 10 FROM Stations s1, Stations s2 WHERE s1.StationID = 1 AND s2.StationID = 2;
 INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
+SELECT s1.$node_id, s2.$node_id, 2.5, 10 FROM Stations s1, Stations s2 WHERE s1.StationID = 2 AND s2.StationID = 1;
+
+INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
 SELECT s1.$node_id, s2.$node_id, 3.0, 15 FROM Stations s1, Stations s2 WHERE s1.StationID = 2 AND s2.StationID = 3;
 INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
-SELECT s1.$node_id, s2.$node_id, 1.5, 7  FROM Stations s1, Stations s2 WHERE s1.StationID = 3 AND s2.StationID = 4;
+SELECT s1.$node_id, s2.$node_id, 3.0, 15 FROM Stations s1, Stations s2 WHERE s1.StationID = 3 AND s2.StationID = 2;
+
+INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
+SELECT s1.$node_id, s2.$node_id, 1.5, 7 FROM Stations s1, Stations s2 WHERE s1.StationID = 3 AND s2.StationID = 4;
+INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
+SELECT s1.$node_id, s2.$node_id, 1.5, 7 FROM Stations s1, Stations s2 WHERE s1.StationID = 4 AND s2.StationID = 3;
+
 INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
 SELECT s1.$node_id, s2.$node_id, 4.0, 20 FROM Stations s1, Stations s2 WHERE s1.StationID = 4 AND s2.StationID = 5;
+INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
+SELECT s1.$node_id, s2.$node_id, 4.0, 20 FROM Stations s1, Stations s2 WHERE s1.StationID = 5 AND s2.StationID = 4;
 
 INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
 SELECT s1.$node_id, s2.$node_id, 3.5, 15 FROM Stations s1, Stations s2 WHERE s1.StationID = 1 AND s2.StationID = 6;
 INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
+SELECT s1.$node_id, s2.$node_id, 3.5, 15 FROM Stations s1, Stations s2 WHERE s1.StationID = 6 AND s2.StationID = 1;
+
+INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
 SELECT s1.$node_id, s2.$node_id, 2.0, 10 FROM Stations s1, Stations s2 WHERE s1.StationID = 6 AND s2.StationID = 5;
+INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
+SELECT s1.$node_id, s2.$node_id, 2.0, 10 FROM Stations s1, Stations s2 WHERE s1.StationID = 5 AND s2.StationID = 6;
 
 INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
 SELECT s1.$node_id, s2.$node_id, 5.0, 25 FROM Stations s1, Stations s2 WHERE s1.StationID = 2 AND s2.StationID = 8;
 INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
-SELECT s1.$node_id, s2.$node_id, 1.0, 5  FROM Stations s1, Stations s2 WHERE s1.StationID = 8 AND s2.StationID = 9;
+SELECT s1.$node_id, s2.$node_id, 5.0, 25 FROM Stations s1, Stations s2 WHERE s1.StationID = 8 AND s2.StationID = 2;
+
+INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
+SELECT s1.$node_id, s2.$node_id, 1.0, 5 FROM Stations s1, Stations s2 WHERE s1.StationID = 8 AND s2.StationID = 9;
+INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
+SELECT s1.$node_id, s2.$node_id, 1.0, 5 FROM Stations s1, Stations s2 WHERE s1.StationID = 9 AND s2.StationID = 8;
+
 INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
 SELECT s1.$node_id, s2.$node_id, 2.5, 12 FROM Stations s1, Stations s2 WHERE s1.StationID = 9 AND s2.StationID = 10;
+INSERT INTO RouteTo ($from_id, $to_id, DistanceKm, EstimatedTimeMinutes)
+SELECT s1.$node_id, s2.$node_id, 2.5, 12 FROM Stations s1, Stations s2 WHERE s1.StationID = 10 AND s2.StationID = 9;
 
 -- пункт 5
 
@@ -176,7 +201,7 @@ FROM
     ParkedAt p2, Bikes b2, Rented r2, Users u2
 WHERE 
     MATCH(u1-(r1)->b1-(p1)->s<-(p2)-b2<-(r2)-u2)
-    AND u1.UserID < u2.UserID; -- Избегаем дубликатов пар (A-B и B-A)
+    AND u1.UserID < u2.UserID; 
 
 -- Найти пользователей, чьи велосипеды стоят на станциях, от которых есть маршруты длиннее 3 км
 -- Цепочка: User -> Rented -> Bike -> ParkedAt -> Station -> RouteTo -> Station
@@ -188,35 +213,63 @@ WHERE MATCH(u-(r)->b-(p)->s1-(rt)->s2)
   -- пункт 6
 
   -- Поиск любого кратчайшего пути от 'Центральная площадь' до 'Набережная' с использованием шаблона '+' (1 и более шагов)
--- Вывод полного маршрута через STRING_AGG и конечного узла через LAST_NODE
 
+-- Запрос 1: шаблон + (через CTE для фильтрации конечного узла)
+
+WITH PathCTE AS (
+    SELECT
+        S1.StationName AS StartStation,
+        STRING_AGG(S2.StationName, ' -> ')
+            WITHIN GROUP (GRAPH PATH)       AS RoutePath,
+        LAST_VALUE(S2.StationName)
+            WITHIN GROUP (GRAPH PATH)       AS EndStation,
+        COUNT(S2.StationName)
+            WITHIN GROUP (GRAPH PATH)       AS NumberOfHops,
+        SUM(rt.DistanceKm)
+            WITHIN GROUP (GRAPH PATH)       AS TotalDistanceKm
+    FROM
+        Stations AS S1,
+        RouteTo FOR PATH AS rt,
+        Stations FOR PATH AS S2
+    WHERE
+        MATCH(SHORTEST_PATH(S1(-(rt)->S2)+))
+        AND S1.StationName = 'Центральная площадь'
+)
 SELECT
-    S1.StationName AS StartStation,
-    STRING_AGG(S2.StationName, ' -> ') WITHIN GROUP (GRAPH PATH) AS RoutePath,
-    LAST_VALUE(S2.StationName) WITHIN GROUP (GRAPH PATH) AS EndStation,
-    COUNT(S2.StationName) WITHIN GROUP (GRAPH PATH) AS NumberOfHops
-FROM
-    Stations S1,
-    RouteTo FOR PATH rt,
-    Stations FOR PATH S2
-WHERE
-    MATCH(SHORTEST_PATH(S1(-(rt)->S2)+))
-    AND S1.StationName = 'Центральная площадь'
-    AND LAST_VALUE(S2.StationName) WITHIN GROUP (GRAPH PATH) = 'Набережная';
+    StartStation,
+    StartStation + ' -> ' + RoutePath   AS FullPath,
+    EndStation,
+    NumberOfHops,
+    TotalDistanceKm
+FROM PathCTE
+WHERE EndStation = 'Набережная';
 
--- Найти все пути от станции 'Центральная площадь' до станции 'Южный парк', 
--- ограничивая поиск строго от 1 до 4 шагов с использованием шаблона '{1,4}'.
-SELECT 
-    S1.StationName AS StartStation,
-    STRING_AGG(S2.StationName, ' -> ') WITHIN GROUP (GRAPH PATH) AS RoutePath,
-    LAST_VALUE(S2.StationName) WITHIN GROUP (GRAPH PATH) AS EndStation
-FROM 
-    Stations S1, 
-    RouteTo FOR PATH rt, 
-    Stations FOR PATH S2
-WHERE 
-    MATCH(SHORTEST_PATH(S1(-(rt)->S2){1,4}))
-    AND S1.StationName = 'Центральная площадь'
-    AND LAST_VALUE(S2.StationName) WITHIN GROUP (GRAPH PATH) = 'Южный парк';
-
-
+-- Запрос 2: шаблон {1,5} — пути длиной от 1 до 5 шагов от любой станции
+WITH PathCTE AS (
+    SELECT
+        S1.StationName                          AS StartStation,
+        STRING_AGG(S2.StationName, ' -> ')
+            WITHIN GROUP (GRAPH PATH)           AS IntermediateNodes,
+        LAST_VALUE(S2.StationName)
+            WITHIN GROUP (GRAPH PATH)           AS EndStation,
+        COUNT(S2.StationName)
+            WITHIN GROUP (GRAPH PATH)           AS NumberOfHops,
+        SUM(rt.EstimatedTimeMinutes)
+            WITHIN GROUP (GRAPH PATH)           AS TotalTimeMinutes
+    FROM
+        Stations AS S1,
+        RouteTo FOR PATH AS rt,
+        Stations FOR PATH AS S2
+    WHERE
+        MATCH(SHORTEST_PATH(S1(-(rt)->S2){1,5}))
+)
+SELECT
+    StartStation,
+    StartStation + ' -> ' + IntermediateNodes  AS FullPath,
+    EndStation,
+    NumberOfHops,
+    TotalTimeMinutes
+FROM PathCTE
+ORDER BY
+    StartStation,
+    NumberOfHops;
